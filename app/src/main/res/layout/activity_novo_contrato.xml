@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorQuaseBranco">
+
+    <TextView
+        android:id="@+id/contrato_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="51dp"
+        android:text="Novo Contrato"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:textColor="@color/colordarkred"
+        android:fontFamily="sans-serif"/>
+
+    <EditText
+        android:id="@+id/novo_contrato_start_date_input"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/contrato_text"
+        android:layout_marginLeft="14dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="26dp"
+        android:ems="10"
+        android:inputType="date"
+        android:hint="Data De Início"
+        android:textColorHint="@color/colorPrimary"
+        />
+
+    <EditText
+        android:id="@+id/novo_contrato_data_termino_input"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="date"
+        android:hint="Data Termino"
+        android:textColorHint="@color/colorPrimary"
+        android:layout_marginLeft="32dp"
+        android:layout_marginStart="32dp"
+        android:layout_alignBaseline="@+id/novo_contrato_start_date_input"
+        android:layout_alignBottom="@+id/novo_contrato_start_date_input"
+        android:layout_toRightOf="@+id/novo_contrato_start_date_input"
+        android:layout_toEndOf="@+id/novo_contrato_start_date_input" />
+
+    <EditText
+        android:id="@+id/novo_contrato_preco_input"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/novo_contrato_start_date_input"
+        android:layout_alignStart="@+id/novo_contrato_start_date_input"
+        android:layout_below="@+id/novo_contrato_start_date_input"
+        android:layout_marginTop="15dp"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        android:hint="Preço"
+        android:textColorHint="@color/colorPrimary"/>
+
+    <EditText
+        android:id="@+id/novo_contrato_cpf_input"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:layout_below="@+id/novo_contrato_preco_input"
+        android:layout_alignLeft="@+id/novo_contrato_preco_input"
+        android:layout_alignStart="@+id/novo_contrato_preco_input"
+        android:hint="CPF Cliente"
+        android:textColorHint="@color/colorPrimary"/>
+
+    <EditText
+        android:id="@+id/novo_contrato_placa_input"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/novo_contrato_cpf_input"
+        android:layout_alignRight="@+id/novo_contrato_cpf_input"
+        android:layout_below="@+id/novo_contrato_cpf_input"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="Placa"
+        android:textColorHint="@color/colorPrimary"/>
+
+    <Button
+        android:id="@+id/novo_contrato_criar_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/novo_contrato_placa_input"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="63dp"
+        android:text="CRIAR"
+        android:background="@color/colorSalmao"
+        android:textColor="@color/colorWhite"/>
+
+
+</RelativeLayout>

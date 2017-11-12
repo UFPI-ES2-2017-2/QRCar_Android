@@ -73,7 +73,6 @@ public class ClientsRepository implements IClientsRepository{
         client1.setName("Armando Soares Sousa");
         client1.setEmail("armando@ufpi.edu.br");
         client1.setAddress("Rua Territorio Fernando de Noronha");
-        client1.setPassword("123");
         insertClient(client1);
     }
 }
