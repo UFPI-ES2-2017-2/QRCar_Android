@@ -9,6 +9,7 @@ public class UsersController {
 
     public UsersController(){
         users = new UsersRepository();
+        users.populateUsersRepository();
     }
 
     public Boolean insertUser(User u)

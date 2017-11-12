@@ -26,7 +26,7 @@ public class ClientsRepository implements IClientsRepository{
 
     /**
      * Searches a client by cpf
-     * @param cpf
+     * @param cpf cpf number of a client
      * @return Client
      */
     public Client searchClient(int cpf){
@@ -45,7 +45,7 @@ public class ClientsRepository implements IClientsRepository{
 
     /**
      * Lists all clients on the repository
-     * @return
+     * @return Bool
      */
     public List<Client> list(){
         return clients;
@@ -74,5 +74,30 @@ public class ClientsRepository implements IClientsRepository{
         client1.setEmail("armando@ufpi.edu.br");
         client1.setAddress("Rua Territorio Fernando de Noronha");
         insertClient(client1);
+        Client client2 = new Client();
+        client2.setName("Vitor Meneses");
+        client2.setEmail("vitor@ufpi.edu.br");
+        client2.setAddress("DC - UFPI");
+        insertClient(client2);
+        Client client3 = new Client();
+        client3.setName("Luca Carvalho");
+        client3.setEmail("luca@ufpi.edu.br");
+        client3.setAddress("DC - UFPI");
+        insertClient(client3);
+        Client client4 = new Client();
+        client4.setName("Natasha Rebelo");
+        client4.setEmail("natasha@ufpi.edu.br");
+        client4.setAddress("DC - UFPI");
+        insertClient(client4);
+        Client client5 = new Client();
+        client5.setName("Railson Soares");
+        client5.setEmail("railson@ufpi.edu.br");
+        client5.setAddress("DC - UFPI");
+        insertClient(client5);
+        Client client6 = new Client();
+        client6.setName("Jonathans Evangelista");
+        client6.setEmail("jonathans@ufpi.edu.br");
+        client6.setAddress("DC - UFPI");
+        insertClient(client6);
     }
 }

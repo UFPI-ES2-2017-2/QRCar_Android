@@ -6,12 +6,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import es.ufpi.br.qrcar.R;
-
-/**
- * Class that represents a Login screen for the QRCar application
- */
+import es.ufpi.br.qrcar.facade.Facade;
 
 public class Login extends AppCompatActivity {
     private EditText user_input;
@@ -41,6 +39,11 @@ public class Login extends AppCompatActivity {
         Intent intent = new Intent(this,Dashboard.class);
         intent.putExtra("user", user);
         intent.putExtra("password",password);
-        startActivity(intent);
+        Facade facade = new Facade();
+        if(facade.searchUser(user, password) != null)
+            startActivity(intent);
+        else
+            Toast.makeText(Login.this, "Incorrect email or password.",
+                    Toast.LENGTH_LONG).show();
     }
 }

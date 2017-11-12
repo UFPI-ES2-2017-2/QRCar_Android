@@ -5,12 +5,9 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import es.ufpi.br.qrcar.R;
-
-/**
- * Created by natasha on 11-11-2017.
- */
 
 public class Dashboard extends AppCompatActivity {
     private Button clientes_button;
@@ -18,10 +15,8 @@ public class Dashboard extends AppCompatActivity {
     private Button contratos_button;
     private Button funcionarios_button;
 
-
     @Override
-    protected void onCreate(Bundle savedInstance)
-    {
+    protected void onCreate(Bundle savedInstance) {
         super.onCreate(savedInstance);
         setContentView(R.layout.activity_menu_principal);
         this.clientes_button = (Button)findViewById(R.id.clientes_button);
@@ -56,30 +51,28 @@ public class Dashboard extends AppCompatActivity {
                 funcionarios_button_onclick(view);
             }
         });
+
+        Toast.makeText(Dashboard.this, "Welcome!",
+                Toast.LENGTH_LONG).show();
     }
 
-    private void clientes_button_onclick(View view)
-    {
+    private void clientes_button_onclick(View view) {
         Intent intent = new Intent(this,ListarCliente.class);
         startActivity(intent);
     }
 
-    private void carros_button_onclick(View view)
-    {
+    private void carros_button_onclick(View view) {
         Intent intent = new Intent(this,ListarVeiculos.class);
         startActivity(intent);
     }
 
-    private void contratos_button_onclick(View view)
-    {
+    private void contratos_button_onclick(View view) {
         Intent intent = new Intent(this,NovoContrato.class);
         startActivity(intent);
     }
 
-    private void funcionarios_button_onclick(View view)
-    {
+    private void funcionarios_button_onclick(View view) {
         Intent intent = new Intent(this,NovoFuncionario.class);
         startActivity(intent);
     }
-
 }

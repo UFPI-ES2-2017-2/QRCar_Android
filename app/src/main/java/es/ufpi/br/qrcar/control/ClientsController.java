@@ -7,37 +7,33 @@ import java.util.List;
 public class ClientsController {
     private ClientsRepository clients;
 
-    public ClientsController()
-    {
+    public ClientsController() {
         this.clients = new ClientsRepository();
+        this.clients.populateClientsRepository();
     }
 
-    public Boolean insertClient(Client c)
-    {
+    public Boolean insertClient(Client c) {
         if (this.clients.insertClient(c))
             return true;
         else
             return false;
     }
 
-    public Boolean removeClient(Client c)
-    {
+    public Boolean removeClient(Client c) {
         if (this.clients.removeClient(c))
             return true;
         else
             return false;
     }
 
-    public Boolean editClient(Client oldC, Client newC)
-    {
+    public Boolean editClient(Client oldC, Client newC) {
         if (this.clients.editClient(oldC, newC))
             return true;
         else
             return false;
     }
 
-    public List<Client> listClients()
-    {
+    public List<Client> listClients() {
         return this.clients.list();
     }
 
@@ -45,5 +41,4 @@ public class ClientsController {
     {
         return this.clients.searchClient(cpf);
     }
-
 }

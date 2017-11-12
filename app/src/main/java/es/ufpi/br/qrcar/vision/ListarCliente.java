@@ -6,22 +6,32 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
+import android.widget.ListAdapter;
+import android.widget.ListView;
+
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
 
 import es.ufpi.br.qrcar.R;
-
-/**
- * Created by root on 12-11-2017.
- */
+import es.ufpi.br.qrcar.control.ClientsController;
+import es.ufpi.br.qrcar.entity.Client;
 
 public class ListarCliente extends AppCompatActivity {
     private ImageButton add_button;
+    private ListView listView;
+    private ClientsController clientsController;
+    private List<Client> clients;
+    private ArrayList<String> clientsNames;
 
     @Override
     protected void onCreate(Bundle savedInstance)
     {
         super.onCreate(savedInstance);
         setContentView(R.layout.activity_listar_clientes);
+        this.listView = (ListView)findViewById(R.id.listar_clientes_lista);
         this.add_button = (ImageButton)findViewById(R.id.listar_clientes_add_button);
         this.add_button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -29,6 +39,16 @@ public class ListarCliente extends AppCompatActivity {
                 add_button_onClick(view);
             }
         });
+        this.clients = new LinkedList<Client>();
+        clientsController = new ClientsController();
+        clients = clientsController.listClients();
+        clientsNames = new ArrayList<String>();
+        for (Client c : clients){
+            clientsNames.add(c.getName());
+        }
+
+        ListAdapter listAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, clientsNames);
+        listView.setAdapter(listAdapter);
     }
 
     @Override
