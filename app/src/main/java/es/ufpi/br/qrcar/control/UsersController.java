@@ -2,7 +2,7 @@ package es.ufpi.br.qrcar.control;
 
 import es.ufpi.br.qrcar.repository.UsersRepository;
 import es.ufpi.br.qrcar.entity.User;
-
+import java.util.List;
 public class UsersController {
     private UsersRepository users;
 
@@ -10,36 +10,42 @@ public class UsersController {
         users = new UsersRepository();
     }
 
-    /**
-     * Given an email, it returns a certain user's data
-     * @param email email of a user
-     * @return user
-     */
-    public User loadUserData(String email){
-        User user = new User();
+    public Boolean insertUser(User u)
+    {
+        if(this.users.insertUser(u))
+            return true;
+        else
+            return false;
+    }
 
-        //Fecthes data of repo or service from the user database
-        user = users.searchUser(email);
+    public Boolean removeUser(User u)
+    {
+        if(this.users.removeUser(u))
+            return true;
+        else
+            return false;
+    }
 
-        if (user != null){
-            return user;
-        }else {
-            return null;
+    public List<User> listUsers()
+    {
+        return this.users.getUsers();
+    }
+
+    public User searchUser(String login, String password)
+    {
+        User tempUser = this.users.searchUser(login, password);
+    }
+
+    public Boolean editUser(User newU, User oldU)
+    {
+        for(int i = 0; i < this.users.getUsers().size(); i++)
+        {
+            if (this.users.getUsers().get(i).equals(oldU))
+            {
+                this.users.getUsers().get(i) = newU;
+                return true;
+            }
         }
-    }
-
-    /**
-     * Inserts a new user
-     * @param u User's data
-     */
-    public void insertUser(User u){
-        users.insertUser(u);
-    }
-
-    /**
-     * Populates the repo with random user data
-     */
-    public void populate(){
-        users.populateUsersRepository();
+        return false;
     }
 }
