@@ -47,7 +47,7 @@ public class ContractsRepository implements IContractsRepository {
      * Lists all contracts on the repository
      * @return
      */
-    public List<Contract> getContracts(){
+    public List<Contract> list(){
         return contracts;
     }
 

@@ -7,6 +7,6 @@ public interface IClientsRepository {
     public Boolean insertClient(Client c);
     public Boolean removeClient(Client c);
     public List<Client> list();
-    public Client searchClient(String login, String password);
+    public Client searchClient(int cpf);
     public Boolean editClient(Client original, Client new_client);
 }

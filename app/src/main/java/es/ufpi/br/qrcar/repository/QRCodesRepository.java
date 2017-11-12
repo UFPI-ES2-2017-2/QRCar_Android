@@ -5,15 +5,23 @@ import java.util.List;
 
 import es.ufpi.br.qrcar.entity.QRCode;
 
-public class QRCodesRepository {
+public class QRCodesRepository implements IQRCodesRepository{
     private List<QRCode> qr_codes;
 
     public QRCodesRepository(){
         this.qr_codes = new LinkedList<QRCode>();
     }
 
-    public void insertQRCode(QRCode qr_code){
-        qr_codes.add(qr_code);
+    public Boolean insertQRCode(QRCode qr_code){
+        if(qr_codes.add(qr_code))
+            return true;
+        return false;
+    }
+
+    public Boolean removeQRCode(QRCode qr_code){
+        if(qr_codes.remove(qr_code))
+            return true;
+        return false;
     }
 
     /**
@@ -39,8 +47,22 @@ public class QRCodesRepository {
      * Lists all qr_codes on the repository
      * @return
      */
-    public List<QRCode> getQRCodes(){
+    public List<QRCode> list(){
         return qr_codes;
+    }
+
+    /**
+     * Edits a qr_code's entry on the repository
+     * @return Boolean
+     */
+    public Boolean editQRCode(QRCode original, QRCode new_qr_code){
+        for (QRCode q : qr_codes){
+            if (q.equals(original)){
+                q = new_qr_code;
+                return true;
+            }
+        }
+        return false;
     }
 
     /**
