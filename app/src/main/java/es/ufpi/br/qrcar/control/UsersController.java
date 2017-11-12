@@ -3,6 +3,7 @@ package es.ufpi.br.qrcar.control;
 import es.ufpi.br.qrcar.repository.UsersRepository;
 import es.ufpi.br.qrcar.entity.User;
 import java.util.List;
+
 public class UsersController {
     private UsersRepository users;
 
@@ -38,16 +39,11 @@ public class UsersController {
         return tempUser;
     }
 
-    public Boolean editUser(User newU, User oldU)
+    public Boolean editUser(User oldU, User newU)
     {
-        for(int i = 0; i < this.users.list().size(); i++)
-        {
-            if (this.users.list().get(i).equals(oldU))
-            {
-                this.users.list().set(i, newU);
-                return true;
-            }
-        }
-        return false;
+        if (this.users.editUser(oldU, newU))
+            return true;
+        else
+            return false;
     }
 }
