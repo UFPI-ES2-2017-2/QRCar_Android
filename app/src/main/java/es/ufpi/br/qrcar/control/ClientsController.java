@@ -41,9 +41,9 @@ public class ClientsController {
         return this.clients.list();
     }
 
-    public Client searchClient(String login, String password)
+    public Client searchClient(int cpf)
     {
-        return this.clients.searchClient(login, password);
+        return this.clients.searchClient(cpf);
     }
 
 }
