@@ -5,15 +5,23 @@ import java.util.List;
 
 import es.ufpi.br.qrcar.entity.Vehicle;
 
-public class VehiclesRepository {
+public class VehiclesRepository implements IVehiclesRepository{
     private List<Vehicle> vehicles;
 
     public VehiclesRepository(){
         this.vehicles = new LinkedList<Vehicle>();
     }
 
-    public void insertVehicle(Vehicle vehicle){
-        vehicles.add(vehicle);
+    public Boolean insertVehicle(Vehicle vehicle){
+        if(vehicles.add(vehicle))
+            return true;
+        return false;
+    }
+
+    public Boolean removeVehicle(Vehicle vehicle){
+        if(vehicles.remove(vehicle))
+            return true;
+        return false;
     }
 
     /**
@@ -21,7 +29,7 @@ public class VehiclesRepository {
      * @param car_id car's email
      * @return Car
      */
-    public Vehicle searchVehicle(int car_id){
+    public Vehicle searchVehicle(String plate_id, int car_id){
         Vehicle aux = null;
 
         for (Vehicle v : vehicles){
@@ -39,8 +47,22 @@ public class VehiclesRepository {
      * Lists all cars on the repository
      * @return
      */
-    public List<Vehicle> getVehicles(){
+    public List<Vehicle> list(){
         return vehicles;
+    }
+
+    /**
+     * Edits a car's entry on the repository
+     * @return Boolean
+     */
+    public Boolean editVehicle(Vehicle original, Vehicle new_vehicle){
+        for (Vehicle v : vehicles){
+            if (v.equals(original)){
+                v = new_vehicle;
+                return true;
+            }
+        }
+        return false;
     }
 
     /**

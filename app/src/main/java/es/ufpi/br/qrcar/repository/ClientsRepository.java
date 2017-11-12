@@ -12,24 +12,28 @@ public class ClientsRepository implements IClientsRepository{
         this.clients = new LinkedList<Client>();
     }
 
-    public void insertClient(Client client){
-        clients.add(client);
+    public Boolean insertClient(Client client){
+        if(clients.add(client))
+            return true;
+        return false;
     }
 
-    public void removeClient(Client client){
-        clients.remove(client);
+    public Boolean removeClient(Client client){
+        if(clients.remove(client))
+            return true;
+        return false;
     }
 
     /**
-     * Searches a client by an email address
-     * @param email client's email
+     * Searches a client by cpf
+     * @param cpf
      * @return Client
      */
-    public Client searchClient(String email, String password){
+    public Client searchClient(int cpf){
         Client aux = null;
 
         for (Client c : clients){
-            if (c.getEmail().equals(email)){
+            if (c.getCpf() == cpf){
                 aux = c;
                 break;
             }else{
@@ -47,15 +51,18 @@ public class ClientsRepository implements IClientsRepository{
         return clients;
     }
 
-    public void editClient(Client original_client, Client new_client){
-        Client aux = null;
-
+    /**
+     * Edits a client's entry on the repository
+     * @return Boolean
+     */
+    public Boolean editClient(Client original, Client new_client){
         for (Client c : clients){
-            if (c.equals(original_client)){
+            if (c.equals(original)){
                 c = new_client;
-                break;
+                return true;
             }
         }
+        return false;
     }
 
     /**
