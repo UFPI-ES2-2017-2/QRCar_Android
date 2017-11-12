@@ -28,21 +28,23 @@ public class UsersController {
 
     public List<User> listUsers()
     {
-        return this.users.getUsers();
+        return this.users.list();
     }
 
     public User searchUser(String login, String password)
     {
         User tempUser = this.users.searchUser(login, password);
+
+        return tempUser;
     }
 
     public Boolean editUser(User newU, User oldU)
     {
-        for(int i = 0; i < this.users.getUsers().size(); i++)
+        for(int i = 0; i < this.users.list().size(); i++)
         {
-            if (this.users.getUsers().get(i).equals(oldU))
+            if (this.users.list().get(i).equals(oldU))
             {
-                this.users.getUsers().get(i) = newU;
+                this.users.list().set(i, newU);
                 return true;
             }
         }
