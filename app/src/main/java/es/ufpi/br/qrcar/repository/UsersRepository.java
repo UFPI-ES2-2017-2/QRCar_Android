@@ -5,15 +5,23 @@ import java.util.List;
 
 import es.ufpi.br.qrcar.entity.User;
 
-public class UsersRepository {
+public class UsersRepository implements IUsersRepository {
     private List<User> users;
 
     public UsersRepository(){
         this.users = new LinkedList<User>();
     }
 
-    public void insertUser(User user){
-        users.add(user);
+    public Boolean insertUser(User user){
+        if(users.add(user))
+            return true;
+        return false;
+    }
+
+    public Boolean removeUser(User user){
+        if(users.remove(user))
+            return true;
+        return false;
     }
 
     /**
@@ -21,7 +29,7 @@ public class UsersRepository {
      * @param email user's email
      * @return User
      */
-    public User searchUser(String email){
+    public User searchUser(String email, String password){
         User aux = null;
 
         for (User u : users){
@@ -37,10 +45,23 @@ public class UsersRepository {
 
     /**
      * Lists all users on the repository
-     * @return
      */
-    public List<User> getUsers(){
+    public List<User> list(){
         return users;
+    }
+
+    /**
+     * Edits an user's entry on the repository
+     * @return Boolean
+     */
+    public Boolean editUser(User original_user, User new_user){
+        for (User u : users){
+            if (u.equals(original_user)){
+                u = new_user;
+                return true;
+            }
+        }
+        return false;
     }
 
     /**

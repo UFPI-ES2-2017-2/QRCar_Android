@@ -36,7 +36,7 @@ public class VehiclesRepository {
     }
 
     /**
-     * Lists all users on the repository
+     * Lists all cars on the repository
      * @return
      */
     public List<Vehicle> getVehicles(){
@@ -44,7 +44,7 @@ public class VehiclesRepository {
     }
 
     /**
-     * Populates data of users randomly for tests purposes only
+     * Populates data of cars randomly for tests purposes only
      */
     public void populateVehiclesRepository(){
         Vehicle vehicle1 = new Vehicle();

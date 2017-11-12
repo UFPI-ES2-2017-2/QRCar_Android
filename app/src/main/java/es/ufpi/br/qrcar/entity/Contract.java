@@ -8,6 +8,7 @@ public class Contract {
     private Date end_data;
     private float price;
     private int client_cpf;
+    private int contract_id;
     private String plate_ID;
 
     public Date getStart_date() {
@@ -40,6 +41,14 @@ public class Contract {
 
     public void setClient_cpf(int client_cpf) {
         this.client_cpf = client_cpf;
+    }
+
+    public int getContract_id() {
+        return contract_id;
+    }
+
+    public void setContract_id(int contract_id) {
+        this.contract_id = contract_id;
     }
 
     public String getPlate_ID() {

@@ -5,7 +5,7 @@ import java.util.List;
 
 import es.ufpi.br.qrcar.entity.Client;
 
-public class ClientsRepository{
+public class ClientsRepository implements IClientsRepository{
     private List<Client> clients;
 
     public ClientsRepository(){
@@ -16,12 +16,16 @@ public class ClientsRepository{
         clients.add(client);
     }
 
+    public void removeClient(Client client){
+        clients.remove(client);
+    }
+
     /**
-     * Searches a user by an email address
-     * @param email user's email
-     * @return User
+     * Searches a client by an email address
+     * @param email client's email
+     * @return Client
      */
-    public Client searchClient(String email){
+    public Client searchClient(String email, String password){
         Client aux = null;
 
         for (Client c : clients){
@@ -36,11 +40,22 @@ public class ClientsRepository{
     }
 
     /**
-     * Lists all users on the repository
+     * Lists all clients on the repository
      * @return
      */
-    public List<Client> getClients(){
+    public List<Client> list(){
         return clients;
+    }
+
+    public void editClient(Client original_client, Client new_client){
+        Client aux = null;
+
+        for (Client c : clients){
+            if (c.equals(original_client)){
+                c = new_client;
+                break;
+            }
+        }
     }
 
     /**
