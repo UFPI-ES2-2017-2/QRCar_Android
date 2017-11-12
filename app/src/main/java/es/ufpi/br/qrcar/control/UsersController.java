@@ -1,7 +1,7 @@
 package es.ufpi.br.qrcar.control;
 
-import es.ufpi.br.qrcar.data.UsersRepository;
-import es.ufpi.br.qrcar.data.User;
+import es.ufpi.br.qrcar.repository.UsersRepository;
+import es.ufpi.br.qrcar.entity.User;
 
 public class UsersController {
     private UsersRepository users;

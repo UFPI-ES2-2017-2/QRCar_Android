@@ -1,11 +1,13 @@
-package es.ufpi.br.qrcar.data;
+package es.ufpi.br.qrcar.entity;
 
 public class User {
     private String name;
     private String email;
     private String password;
-    private String gender;
     private String address;
+    private String position;
+    private int cpf;
+    private int id;
 
     public String getName() {
         return name;
@@ -31,19 +33,35 @@ public class User {
         this.password = password;
     }
 
-    public String getGender() {
-        return gender;
-    }
-
-    public void setGender(String gender) {
-        this.gender = gender;
-    }
-
     public String getAddress() {
         return address;
     }
 
     public void setAddress(String address) {
         this.address = address;
+    }
+
+    public String getPosition() {
+        return address;
+    }
+
+    public void setPosition(String position) {
+        this.position = position;
+    }
+
+    public int getCpf() {
+        return cpf;
+    }
+
+    public void setCpf(int cpf) {
+        this.cpf = cpf;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }

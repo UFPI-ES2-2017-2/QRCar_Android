@@ -1,7 +1,9 @@
-package es.ufpi.br.qrcar.data;
+package es.ufpi.br.qrcar.repository;
 
 import java.util.LinkedList;
 import java.util.List;
+
+import es.ufpi.br.qrcar.entity.User;
 
 public class UsersRepository {
     private List<User> users;
@@ -50,8 +52,6 @@ public class UsersRepository {
         user1.setEmail("armando@ufpi.edu.br");
         user1.setAddress("Rua Territorio Fernando de Noronha");
         user1.setPassword("123");
-        user1.setGender("Masculino");
-
         insertUser(user1);
     }
 }
