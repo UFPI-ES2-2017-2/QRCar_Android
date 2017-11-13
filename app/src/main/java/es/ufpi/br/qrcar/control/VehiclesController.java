@@ -9,22 +9,19 @@ import java.util.List;
 public class VehiclesController implements Serializable {
     private VehiclesRepository vehicles;
 
-    public VehiclesController()
-    {
+    public VehiclesController() {
         this.vehicles = new VehiclesRepository();
         this.vehicles.populateVehiclesRepository();
     }
 
-    public Boolean insertVehicle(Vehicle v)
-    {
+    public Boolean insertVehicle(Vehicle v) {
         if (this.vehicles.insertVehicle(v))
             return true;
         else
             return false;
     }
 
-    public Boolean removeVehicle(Vehicle v)
-    {
+    public Boolean removeVehicle(Vehicle v) {
         if (this.vehicles.removeVehicle(v))
             return true;
         else
@@ -36,13 +33,11 @@ public class VehiclesController implements Serializable {
         return this.vehicles.list();
     }
 
-    public Vehicle searchVehicle(String plate_id, int car_id)
-    {
+    public Vehicle searchVehicle(String plate_id, int car_id) {
         return this.vehicles.searchVehicle(plate_id, car_id);
     }
 
-    public Boolean editVehicle(Vehicle oldV, Vehicle newV)
-    {
+    public Boolean editVehicle(Vehicle oldV, Vehicle newV) {
         if (this.vehicles.editVehicle(oldV, newV))
             return true;
         else

@@ -11,13 +11,11 @@ import android.widget.ImageButton;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
 import es.ufpi.br.qrcar.R;
-import es.ufpi.br.qrcar.entity.Client;
 import es.ufpi.br.qrcar.entity.Vehicle;
 import es.ufpi.br.qrcar.facade.Facade;
 
@@ -29,8 +27,7 @@ public class ListarVeiculos extends AppCompatActivity {
     private Facade facade;
 
     @Override
-    protected void onCreate(Bundle savedInstance)
-    {
+    protected void onCreate(Bundle savedInstance) {
         super.onCreate(savedInstance);
         setContentView(R.layout.activity_listar_carros);
         this.listView = (ListView)findViewById(R.id.listar_carros_lista);
@@ -55,18 +52,16 @@ public class ListarVeiculos extends AppCompatActivity {
     }
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu)
-    {
+    public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu_search,menu);
         return true;
     }
 
-    private void add_button_onClick(View view)
-    {
+    private void add_button_onClick(View view) {
         Intent intent = new Intent(this,NovoVeiculo.class);
         facade = (Facade) getIntent().getSerializableExtra ("Facade");
-        intent.putExtra("Facade", (Serializable) facade);
+        intent.putExtra("Facade", facade);
         startActivity(intent);
     }
 }

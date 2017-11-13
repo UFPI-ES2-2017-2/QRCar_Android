@@ -20,10 +20,6 @@ import es.ufpi.br.qrcar.R;
 import es.ufpi.br.qrcar.entity.Contract;
 import es.ufpi.br.qrcar.facade.Facade;
 
-/**
- * Created by jonin on 13/11/2017.
- */
-
 public class ListarContratos  extends AppCompatActivity {
 
     private ImageButton add_button_contratos;
@@ -34,8 +30,7 @@ public class ListarContratos  extends AppCompatActivity {
     private Facade facade;
     private TextView aviso;
     @Override
-    protected void onCreate(Bundle savedInstance)
-    {
+    protected void onCreate(Bundle savedInstance) {
         super.onCreate(savedInstance);
         setContentView(R.layout.activity_listar_contratos);
         this.listView = (ListView)findViewById(R.id.listar_contratos_lista);
@@ -61,15 +56,13 @@ public class ListarContratos  extends AppCompatActivity {
     }
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu)
-    {
+    public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu_search,menu);
         return true;
     }
 
-    private void add_button_onClick(View view)
-    {
+    private void add_button_onClick(View view) {
         Intent intent = new Intent(this, NovoContrato.class);
         startActivity(intent);
     }

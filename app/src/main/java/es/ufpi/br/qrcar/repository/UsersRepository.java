@@ -6,7 +6,7 @@ import java.util.List;
 
 import es.ufpi.br.qrcar.entity.User;
 
-public class UsersRepository implements IUsersRepository, Serializable{
+public class UsersRepository implements IUsersRepository, Serializable {
     private List<User> users;
 
     public UsersRepository(){

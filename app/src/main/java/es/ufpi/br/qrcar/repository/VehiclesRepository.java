@@ -6,7 +6,7 @@ import java.util.List;
 
 import es.ufpi.br.qrcar.entity.Vehicle;
 
-public class VehiclesRepository implements IVehiclesRepository, Serializable{
+public class VehiclesRepository implements IVehiclesRepository, Serializable {
     private List<Vehicle> vehicles;
 
     public VehiclesRepository(){

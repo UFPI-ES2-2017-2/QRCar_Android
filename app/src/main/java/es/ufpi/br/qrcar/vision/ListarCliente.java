@@ -11,7 +11,6 @@ import android.widget.ImageButton;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
@@ -28,8 +27,7 @@ public class ListarCliente extends AppCompatActivity {
     private Facade facade;
 
     @Override
-    protected void onCreate(Bundle savedInstance)
-    {
+    protected void onCreate(Bundle savedInstance) {
         super.onCreate(savedInstance);
         setContentView(R.layout.activity_listar_clientes);
         this.listView = (ListView)findViewById(R.id.listar_clientes_lista);
@@ -53,16 +51,16 @@ public class ListarCliente extends AppCompatActivity {
     }
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu)
-    {
+    public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu_search,menu);
         return true;
     }
 
-    private void add_button_onClick(View view)
-    {
+    private void add_button_onClick(View view) {
         Intent intent = new Intent(this, NovoCliente.class);
+        facade = (Facade) getIntent().getSerializableExtra ("Facade");
+        intent.putExtra("Facade", facade);
         startActivity(intent);
     }
 }

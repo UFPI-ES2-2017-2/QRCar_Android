@@ -7,8 +7,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-import java.io.Serializable;
-
 import es.ufpi.br.qrcar.R;
 import es.ufpi.br.qrcar.facade.Facade;
 
@@ -71,21 +69,21 @@ public class Dashboard extends AppCompatActivity {
     private void clientes_button_onclick(View view) {
         Intent intent = new Intent(this,ListarCliente.class);
         facade = (Facade) getIntent().getSerializableExtra ("Facade");
-        intent.putExtra("Facade", (Serializable) facade);
+        intent.putExtra("Facade", facade);
         startActivity(intent);
     }
 
     private void carros_button_onclick(View view) {
         Intent intent = new Intent(this,ListarVeiculos.class);
         facade = (Facade) getIntent().getSerializableExtra ("Facade");
-        intent.putExtra("Facade", (Serializable) facade);
+        intent.putExtra("Facade", facade);
         startActivity(intent);
     }
 
     private void contratos_button_onclick(View view) {
         Intent intent = new Intent(this,ListarContratos.class);
         facade = (Facade) getIntent().getSerializableExtra ("Facade");
-        intent.putExtra("Facade", (Serializable) facade);
+        intent.putExtra("Facade", facade);
         startActivity(intent);
     }
 

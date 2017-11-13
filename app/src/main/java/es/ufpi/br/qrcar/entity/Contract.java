@@ -1,6 +1,5 @@
 package es.ufpi.br.qrcar.entity;
 
-
 import java.io.Serializable;
 import java.util.Date;
 

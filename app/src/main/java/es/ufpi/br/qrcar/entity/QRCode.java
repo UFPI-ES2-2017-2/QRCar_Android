@@ -1,6 +1,5 @@
 package es.ufpi.br.qrcar.entity;
 
-
 import java.io.Serializable;
 
 public class QRCode implements Serializable {

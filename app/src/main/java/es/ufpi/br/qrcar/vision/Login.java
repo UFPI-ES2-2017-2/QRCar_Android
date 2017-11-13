@@ -2,14 +2,11 @@ package es.ufpi.br.qrcar.vision;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Parcelable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-
-import java.io.Serializable;
 
 import es.ufpi.br.qrcar.R;
 import es.ufpi.br.qrcar.facade.Facade;
@@ -21,8 +18,7 @@ public class Login extends AppCompatActivity {
     private static transient Facade facade;
 
     @Override
-    protected void onCreate(Bundle savedInstance)
-    {
+    protected void onCreate(Bundle savedInstance) {
         super.onCreate(savedInstance);
         setContentView(R.layout.activity_login);
         this.user_input = (EditText)findViewById(R.id.login_user_input);
@@ -36,15 +32,14 @@ public class Login extends AppCompatActivity {
         });
     }
 
-    private void entrar_onClick(View view)
-    {
+    private void entrar_onClick(View view) {
         String user = this.user_input.getText().toString();
         String password = this.user_input.getText().toString();
         Intent intent = new Intent(this,Dashboard.class);
         intent.putExtra("user", user);
         intent.putExtra("password",password);
         facade = new Facade();
-        intent.putExtra("Facade", (Serializable) facade);
+        intent.putExtra("Facade", facade);
         if(facade.searchUser(user, password) != null)
             startActivity(intent);
         else

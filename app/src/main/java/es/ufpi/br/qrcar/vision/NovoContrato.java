@@ -10,10 +10,6 @@ import es.ufpi.br.qrcar.R;
 import es.ufpi.br.qrcar.entity.Contract;
 import es.ufpi.br.qrcar.facade.Facade;
 
-/**
- * Created by root on 12-11-2017.
- */
-
 public class NovoContrato extends AppCompatActivity{
     private EditText start_date;
     private EditText end_date;
@@ -23,8 +19,7 @@ public class NovoContrato extends AppCompatActivity{
     private Button criar;
     private Facade facade;
     @Override
-    protected void onCreate(Bundle savedInstance)
-    {
+    protected void onCreate(Bundle savedInstance) {
         super.onCreate(savedInstance);
         setContentView(R.layout.activity_novo_contrato);
         this.start_date = (EditText)findViewById(R.id.novo_contrato_start_date_input);

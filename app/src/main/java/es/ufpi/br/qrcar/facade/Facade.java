@@ -48,7 +48,7 @@ public class Facade implements Serializable {
         return this.qrCodeController.editQRCode(oldQ, newQ);
     }
 
-    //  Contract Controller Methods.
+    // Contract Controller Methods.
     public Boolean insertContract(Contract contract) {
         return this.contractController.insertContract(contract);
     }
@@ -92,8 +92,8 @@ public class Facade implements Serializable {
         return this.vehiclesController.editVehicle(oldV, newV);
     }
 
-    //  Client Controller Methods.
-    public Boolean insetClient(Client client) {
+    // Client Controller Methods.
+    public Boolean insertClient(Client client) {
         return this.clientsController.insertClient(client);
     }
 

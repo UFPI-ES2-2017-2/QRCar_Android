@@ -1,6 +1,5 @@
 package es.ufpi.br.qrcar.entity;
 
-
 import java.io.Serializable;
 
 public class Client implements Serializable {
@@ -49,5 +48,4 @@ public class Client implements Serializable {
     public void setId(int id) {
         this.id = id;
     }
-
 }

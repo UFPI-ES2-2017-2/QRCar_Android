@@ -34,9 +34,7 @@ public class QRCodeController implements Serializable {
         return this.qr_codes.searchQRCode(qr_code);
     }
 
-    public Boolean editQRCode(QRCode oldQ, QRCode newQ)
-    {
+    public Boolean editQRCode(QRCode oldQ, QRCode newQ) {
         return this.qr_codes.editQRCode(oldQ, newQ);
     }
-
 }
