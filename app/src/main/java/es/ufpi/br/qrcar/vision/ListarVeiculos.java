@@ -11,6 +11,7 @@ import android.widget.ImageButton;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
@@ -64,6 +65,8 @@ public class ListarVeiculos extends AppCompatActivity {
     private void add_button_onClick(View view)
     {
         Intent intent = new Intent(this,NovoVeiculo.class);
+        facade = (Facade) getIntent().getSerializableExtra ("Facade");
+        intent.putExtra("Facade", (Serializable) facade);
         startActivity(intent);
     }
 }

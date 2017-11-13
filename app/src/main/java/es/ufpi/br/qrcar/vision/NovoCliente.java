@@ -2,6 +2,7 @@ package es.ufpi.br.qrcar.vision;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.widget.Button;
 import android.widget.EditText;
 
 import es.ufpi.br.qrcar.R;
@@ -18,6 +19,7 @@ public class NovoCliente extends AppCompatActivity {
     private EditText email;
     private EditText city;
     private EditText street;
+    private Button done;
 
     @Override
     protected void onCreate(Bundle savedInstance){
