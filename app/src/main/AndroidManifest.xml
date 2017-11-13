@@ -22,6 +22,8 @@
         <activity android:name=".vision.NovoCliente"></activity>
         <activity android:name=".vision.NovoVeiculo"></activity>
         <activity android:name=".vision.NovoFuncionario"></activity>
+        <activity android:name=".vision.ListarContratos"></activity>
+        <activity android:name=".vision.Sobre"></activity>
 
     </application>
 
