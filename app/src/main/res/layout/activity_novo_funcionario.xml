@@ -6,7 +6,7 @@
     android:background="@color/colorQuaseBranco"
     android:layout_height="match_parent">
 
-    <FrameLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -203,8 +203,8 @@
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="25dp"
-            android:layout_marginLeft="180dp"
-            android:layout_marginTop="444dp"
+            android:layout_marginLeft="250dp"
+            android:layout_marginTop="400dp"
             android:background="@color/colorSalmao"
             android:textColor="@color/colorWhite"
             android:text="CANCELAR"
@@ -216,8 +216,8 @@
             android:layout_height="55dp"
             android:layout_above="@+id/button9"
             android:layout_marginBottom="30dp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="444dp"
+            android:layout_marginLeft="125dp"
+            android:layout_marginTop="430dp"
             android:layout_toLeftOf="@+id/editText5"
             android:layout_toStartOf="@+id/editText5"
             android:text="CONCLUIR"
@@ -230,5 +230,5 @@
 
 
 
-    </FrameLayout>
+    </RelativeLayout>
 </LinearLayout>
