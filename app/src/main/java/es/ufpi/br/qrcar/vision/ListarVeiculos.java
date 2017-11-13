@@ -6,21 +6,19 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
-
+import android.widget.ListAdapter;
 import android.widget.ListView;
-import android.R;
 
-import es.ufpi.br.qrcar.entity.Vehicle;
-import es.ufpi.br.qrcar.facade.Facade;
-
-import java.util.List;
 import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.List;
 
-/**
- * Created by natasha on 11-11-2017.
- */
+import es.ufpi.br.qrcar.R;
+import es.ufpi.br.qrcar.entity.Client;
+import es.ufpi.br.qrcar.entity.Vehicle;
+import es.ufpi.br.qrcar.facade.Facade;
 
 public class ListarVeiculos extends AppCompatActivity {
     private ImageButton add_button;
@@ -34,7 +32,7 @@ public class ListarVeiculos extends AppCompatActivity {
     {
         super.onCreate(savedInstance);
         setContentView(R.layout.activity_listar_carros);
-        this.listView = (ListView)findViewById(R.layout.activity_carros_lista);
+        this.listView = (ListView)findViewById(R.id.listar_carros_lista);
         this.add_button = (ImageButton)findViewById(R.id.listar_carros_add_button);
         this.add_button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -47,10 +45,12 @@ public class ListarVeiculos extends AppCompatActivity {
         vehicles = facade.listVehicles();
         this.vehiclesModels = new ArrayList<String>();
 
-        for(Vehicle v : this.vehicles)
-        {
+        for(Vehicle v : this.vehicles) {
             vehiclesModels.add(v.getModel());
         }
+
+        ListAdapter listAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, vehiclesModels);
+        listView.setAdapter(listAdapter);
     }
 
     @Override
@@ -66,5 +66,4 @@ public class ListarVeiculos extends AppCompatActivity {
         Intent intent = new Intent(this,NovoVeiculo.class);
         startActivity(intent);
     }
-
 }

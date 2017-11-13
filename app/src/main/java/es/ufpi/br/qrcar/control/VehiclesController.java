@@ -12,6 +12,7 @@ public class VehiclesController implements Serializable {
     public VehiclesController()
     {
         this.vehicles = new VehiclesRepository();
+        this.vehicles.populateVehiclesRepository();
     }
 
     public Boolean insertVehicle(Vehicle v)

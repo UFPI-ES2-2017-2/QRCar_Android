@@ -79,5 +79,25 @@ public class VehiclesRepository implements IVehiclesRepository, Serializable{
         vehicle1.setPlate_id("ABC-123");
         vehicle1.setYear(2017);
         insertVehicle(vehicle1);
+
+        Vehicle vehicle2 = new Vehicle();
+        vehicle2.setCar_id(456);
+        vehicle2.setIs_available(Boolean.TRUE);
+        vehicle2.setManufacturer("Audi");
+        vehicle2.setModel("R8");
+        vehicle2.setNum_passengers(2);
+        vehicle2.setPlate_id("ABC-456");
+        vehicle2.setYear(2017);
+        insertVehicle(vehicle2);
+
+        Vehicle vehicle3 = new Vehicle();
+        vehicle3.setCar_id(789);
+        vehicle3.setIs_available(Boolean.TRUE);
+        vehicle3.setManufacturer("Porsche");
+        vehicle3.setModel("Carrera GT");
+        vehicle3.setNum_passengers(2);
+        vehicle3.setPlate_id("ABC-789");
+        vehicle3.setYear(2017);
+        insertVehicle(vehicle3);
     }
 }
