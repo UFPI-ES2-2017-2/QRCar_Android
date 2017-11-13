@@ -17,6 +17,7 @@ public class Dashboard extends AppCompatActivity {
     private Button carros_button;
     private Button contratos_button;
     private Button funcionarios_button;
+    private Button sobre_button;
     private Facade facade;
 
     @Override
@@ -27,7 +28,7 @@ public class Dashboard extends AppCompatActivity {
         this.carros_button = (Button)findViewById(R.id.carros_button);
         this.contratos_button = (Button)findViewById(R.id.contratos_button);
         this.funcionarios_button = (Button)findViewById(R.id.funcionarios_button);
-
+        this.sobre_button = (Button)findViewById(R.id.sobre_button);
         this.clientes_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -56,6 +57,13 @@ public class Dashboard extends AppCompatActivity {
             }
         });
 
+        this.sobre_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                sobre_button_onclick(view);
+            }
+        });
+
         Toast.makeText(Dashboard.this, "Welcome!",
                 Toast.LENGTH_LONG).show();
     }
@@ -75,12 +83,19 @@ public class Dashboard extends AppCompatActivity {
     }
 
     private void contratos_button_onclick(View view) {
-        Intent intent = new Intent(this,NovoContrato.class);
+        Intent intent = new Intent(this,ListarContratos.class);
+        facade = (Facade) getIntent().getSerializableExtra ("Facade");
+        intent.putExtra("Facade", (Serializable) facade);
         startActivity(intent);
     }
 
     private void funcionarios_button_onclick(View view) {
         Intent intent = new Intent(this,NovoFuncionario.class);
+        startActivity(intent);
+    }
+
+    private void sobre_button_onclick(View view) {
+        Intent intent = new Intent(this,Sobre.class);
         startActivity(intent);
     }
 }
