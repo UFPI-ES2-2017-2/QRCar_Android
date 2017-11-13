@@ -2,9 +2,11 @@ package es.ufpi.br.qrcar.control;
 
 import es.ufpi.br.qrcar.repository.ContractsRepository;
 import es.ufpi.br.qrcar.entity.Contract;
+
+import java.io.Serializable;
 import java.util.List;
 
-public class ContractController
+public class ContractController implements Serializable
 {
     private ContractsRepository contracts;
 

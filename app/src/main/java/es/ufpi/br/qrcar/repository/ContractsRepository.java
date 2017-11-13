@@ -1,11 +1,12 @@
 package es.ufpi.br.qrcar.repository;
 
+import java.io.Serializable;
 import java.util.LinkedList;
 import java.util.List;
 
 import es.ufpi.br.qrcar.entity.Contract;
 
-public class ContractsRepository implements IContractsRepository {
+public class ContractsRepository implements IContractsRepository, Serializable {
     private List<Contract> contracts;
 
     public ContractsRepository(){

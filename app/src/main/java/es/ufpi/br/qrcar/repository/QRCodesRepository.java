@@ -1,11 +1,12 @@
 package es.ufpi.br.qrcar.repository;
 
+import java.io.Serializable;
 import java.util.LinkedList;
 import java.util.List;
 
 import es.ufpi.br.qrcar.entity.QRCode;
 
-public class QRCodesRepository implements IQRCodesRepository{
+public class QRCodesRepository implements IQRCodesRepository, Serializable{
     private List<QRCode> qr_codes;
 
     public QRCodesRepository(){

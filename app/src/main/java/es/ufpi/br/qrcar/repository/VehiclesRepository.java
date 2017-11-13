@@ -1,11 +1,12 @@
 package es.ufpi.br.qrcar.repository;
 
+import java.io.Serializable;
 import java.util.LinkedList;
 import java.util.List;
 
 import es.ufpi.br.qrcar.entity.Vehicle;
 
-public class VehiclesRepository implements IVehiclesRepository{
+public class VehiclesRepository implements IVehiclesRepository, Serializable{
     private List<Vehicle> vehicles;
 
     public VehiclesRepository(){

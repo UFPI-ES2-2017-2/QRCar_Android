@@ -1,6 +1,8 @@
 package es.ufpi.br.qrcar.entity;
 
-public class Vehicle {
+import java.io.Serializable;
+
+public class Vehicle implements Serializable {
     private String manufacturer;
     private String model;
     private String plate_id;

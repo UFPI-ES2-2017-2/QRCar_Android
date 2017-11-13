@@ -1,9 +1,10 @@
 package es.ufpi.br.qrcar.entity;
 
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Contract {
+public class Contract implements Serializable {
     private Date start_date;
     private Date end_data;
     private float price;

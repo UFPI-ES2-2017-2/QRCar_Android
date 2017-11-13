@@ -1,8 +1,9 @@
 package es.ufpi.br.qrcar.entity;
 
 
+import java.io.Serializable;
 
-public class Client {
+public class Client implements Serializable {
     private String name;
     private String email;
     private String address;

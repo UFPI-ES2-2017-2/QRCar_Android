@@ -1,7 +1,9 @@
 package es.ufpi.br.qrcar.entity;
 
 
-public class QRCode {
+import java.io.Serializable;
+
+public class QRCode implements Serializable {
     private int car_id;
     private int qr_code;
 

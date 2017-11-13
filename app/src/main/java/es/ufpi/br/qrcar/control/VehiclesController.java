@@ -2,9 +2,11 @@ package es.ufpi.br.qrcar.control;
 
 import es.ufpi.br.qrcar.entity.Vehicle;
 import es.ufpi.br.qrcar.repository.VehiclesRepository;
+
+import java.io.Serializable;
 import java.util.List;
 
-public class VehiclesController {
+public class VehiclesController implements Serializable {
     private VehiclesRepository vehicles;
 
     public VehiclesController()

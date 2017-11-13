@@ -2,9 +2,11 @@ package es.ufpi.br.qrcar.control;
 
 import es.ufpi.br.qrcar.repository.UsersRepository;
 import es.ufpi.br.qrcar.entity.User;
+
+import java.io.Serializable;
 import java.util.List;
 
-public class UsersController {
+public class UsersController implements Serializable {
     private UsersRepository users;
 
     public UsersController(){

@@ -2,9 +2,11 @@ package es.ufpi.br.qrcar.control;
 
 import es.ufpi.br.qrcar.entity.QRCode;
 import es.ufpi.br.qrcar.repository.QRCodesRepository;
+
+import java.io.Serializable;
 import java.util.List;
 
-public class QRCodeController {
+public class QRCodeController implements Serializable {
     private QRCodesRepository qr_codes;
 
     public QRCodeController()

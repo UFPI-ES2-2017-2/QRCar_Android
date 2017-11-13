@@ -2,9 +2,11 @@ package es.ufpi.br.qrcar.control;
 
 import es.ufpi.br.qrcar.entity.Client;
 import es.ufpi.br.qrcar.repository.ClientsRepository;
+
+import java.io.Serializable;
 import java.util.List;
 
-public class ClientsController {
+public class ClientsController implements Serializable{
     private ClientsRepository clients;
 
     public ClientsController() {

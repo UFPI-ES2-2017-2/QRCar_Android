@@ -1,11 +1,12 @@
 package es.ufpi.br.qrcar.repository;
 
+import java.io.Serializable;
 import java.util.LinkedList;
 import java.util.List;
 
 import es.ufpi.br.qrcar.entity.Client;
 
-public class ClientsRepository implements IClientsRepository{
+public class ClientsRepository implements IClientsRepository, Serializable{
     private List<Client> clients;
 
     public ClientsRepository(){

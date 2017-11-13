@@ -1,11 +1,12 @@
 package es.ufpi.br.qrcar.repository;
 
+import java.io.Serializable;
 import java.util.LinkedList;
 import java.util.List;
 
 import es.ufpi.br.qrcar.entity.User;
 
-public class UsersRepository implements IUsersRepository {
+public class UsersRepository implements IUsersRepository, Serializable{
     private List<User> users;
 
     public UsersRepository(){
@@ -70,7 +71,7 @@ public class UsersRepository implements IUsersRepository {
     public void populateUsersRepository(){
         User user1 = new User();
         user1.setName("Armando Soares Sousa");
-        user1.setEmail("armando@ufpi.edu.br");
+        user1.setEmail("armando");
         user1.setAddress("Rua Territorio Fernando de Noronha");
         user1.setPassword("123");
         insertUser(user1);

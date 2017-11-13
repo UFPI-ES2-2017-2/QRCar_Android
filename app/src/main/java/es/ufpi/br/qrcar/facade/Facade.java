@@ -7,9 +7,10 @@ import es.ufpi.br.qrcar.control.ClientsController;
 import es.ufpi.br.qrcar.control.UsersController;
 import es.ufpi.br.qrcar.entity.*;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class Facade {
+public class Facade implements Serializable {
     private QRCodeController qrCodeController;
     private ContractController contractController;
     private VehiclesController vehiclesController;
@@ -24,7 +25,7 @@ public class Facade {
         this.usersController = new UsersController();
     }
 
-     // QRCode Controller Methods.
+    // QRCode Controller Methods.
     public Boolean insertQRCode(QRCode qrcode) {
         return this.qrCodeController.insertQRCode(qrcode);
     }
@@ -70,7 +71,6 @@ public class Facade {
     }
 
     // Vehicle Controller Methods.
-
     public Boolean insertVehicle(Vehicle vehicle) {
         return this.vehiclesController.insertVehicle(vehicle);
     }

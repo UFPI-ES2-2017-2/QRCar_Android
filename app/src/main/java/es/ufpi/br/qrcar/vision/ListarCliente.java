@@ -16,15 +16,15 @@ import java.util.LinkedList;
 import java.util.List;
 
 import es.ufpi.br.qrcar.R;
-import es.ufpi.br.qrcar.control.ClientsController;
 import es.ufpi.br.qrcar.entity.Client;
+import es.ufpi.br.qrcar.facade.Facade;
 
 public class ListarCliente extends AppCompatActivity {
     private ImageButton add_button;
     private ListView listView;
-    private ClientsController clientsController;
     private List<Client> clients;
     private ArrayList<String> clientsNames;
+    private Facade facade;
 
     @Override
     protected void onCreate(Bundle savedInstance)
@@ -40,8 +40,8 @@ public class ListarCliente extends AppCompatActivity {
             }
         });
         this.clients = new LinkedList<Client>();
-        clientsController = new ClientsController();
-        clients = clientsController.listClients();
+        facade = (Facade) getIntent().getSerializableExtra("Facade");
+        clients = facade.listClients();
         clientsNames = new ArrayList<String>();
         for (Client c : clients){
             clientsNames.add(c.getName());
