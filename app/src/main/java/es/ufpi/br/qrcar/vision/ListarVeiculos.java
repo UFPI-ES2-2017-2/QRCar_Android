@@ -49,7 +49,7 @@ public class ListarVeiculos extends AppCompatActivity {
 
         for(Vehicle v : this.vehicles)
         {
-            vehiclesModels.add(v.getModel())
+            vehiclesModels.add(v.getModel());
         }
     }
 

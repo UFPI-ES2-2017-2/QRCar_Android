@@ -14,8 +14,8 @@ import android.widget.ListView;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
+import android.R;
 
-import es.ufpi.br.qrcar.R;
 import es.ufpi.br.qrcar.entity.Client;
 import es.ufpi.br.qrcar.facade.Facade;
 
@@ -47,7 +47,7 @@ public class ListarCliente extends AppCompatActivity {
             clientsNames.add(c.getName());
         }
 
-        ListAdapter listAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, clientsNames);
+        ListAdapter listAdapter = new ArrayAdapter<String>(this, R.layout.simple_list_item_1, clientsNames);
         listView.setAdapter(listAdapter);
     }
 
