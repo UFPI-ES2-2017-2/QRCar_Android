@@ -69,6 +69,8 @@ public class Dashboard extends AppCompatActivity {
 
     private void carros_button_onclick(View view) {
         Intent intent = new Intent(this,ListarVeiculos.class);
+        facade = (Facade) getIntent().getSerializableExtra ("Facade");
+        intent.putExtra("Facade", (Serializable) facade);
         startActivity(intent);
     }
 
