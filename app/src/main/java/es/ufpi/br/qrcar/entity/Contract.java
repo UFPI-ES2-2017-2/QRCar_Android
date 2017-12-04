@@ -5,7 +5,7 @@ import java.util.Date;
 
 public class Contract implements Serializable {
     private Date start_date;
-    private Date end_data;
+    private Date end_date;
     private float price;
     private int client_cpf;
     private int contract_id;
@@ -19,12 +19,12 @@ public class Contract implements Serializable {
         this.start_date = start_date;
     }
 
-    public Date getEnd_data() {
-        return end_data;
+    public Date getEnd_date() {
+        return end_date;
     }
 
-    public void setEnd_data(Date end_data) {
-        this.end_data = end_data;
+    public void setEnd_date(Date end_date) {
+        this.end_date = end_date;
     }
 
     public float getPrice() {

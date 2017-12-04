@@ -34,8 +34,8 @@ public class NovoCliente extends AppCompatActivity {
         this.email = (EditText)findViewById(R.id.novo_cliente_email_input);
         this.city = (EditText)findViewById(R.id.novo_cliente_cidade_input);
         this.street = (EditText)findViewById(R.id.novo_cliente_rua_input);
-        this.add_button = (Button) findViewById(R.id.novo_cliente_concluir_button);
 
+        this.add_button = (Button) findViewById(R.id.novo_cliente_concluir_button);
         this.add_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -47,7 +47,6 @@ public class NovoCliente extends AppCompatActivity {
 
     private void add_button_onClick(View view) {
         Client c = new Client();
-
         c.setName(this.name.getText().toString());
         c.setAddress(this.street.getText().toString());
         c.setCpf(Integer.parseInt(this.cpf.getText().toString()));

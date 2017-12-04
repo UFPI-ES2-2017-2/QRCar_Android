@@ -51,7 +51,7 @@
             android:textColor="@color/colorWhite"/>
 
         <Button
-            android:id="@+id/home_button"
+            android:id="@+id/qr_code_button"
             android:layout_width="120dp"
             android:layout_height="wrap_content"
             android:layout_alignLeft="@+id/button5"
@@ -61,7 +61,7 @@
 
             android:background="@color/colorSalmao"
             android:layout_marginLeft="130dp"
-            android:text="HOME"
+            android:text="Ler QR_Code"
             android:textColor="@color/colorWhite"/>
 
         <Button
@@ -72,7 +72,6 @@
             android:layout_alignStart="@+id/button5"
             android:layout_below="@+id/button5"
             android:layout_marginLeft="130dp"
-
             android:layout_marginTop="450dp"
             android:background="@color/colorSalmao"
             android:text="SOBRE"
@@ -86,7 +85,6 @@
             android:layout_alignParentRight="true"
             android:layout_alignParentTop="true"
             android:layout_marginTop="21dp"
-
             android:layout_marginLeft="95dp"
             android:fontFamily="sans-serif"
             android:text="Menu QR_Car"

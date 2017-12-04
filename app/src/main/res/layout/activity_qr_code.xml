@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <TextView
+            android:id="@+id/QR_codetext"
+            android:layout_width="230dp"
+            android:layout_height="60dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginEnd="66dp"
+            android:layout_marginRight="66dp"
+            android:layout_marginTop="21dp"
+            android:fontFamily="sans-serif"
+            android:text="QR_Code"
+            android:textSize="30dp"
+            android:textColor="@color/colordarkred"
+            android:textStyle="bold" />
+
+
+        <ImageButton
+            android:id="@+id/imageButton"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_below="@+id/QR_codetext"
+            android:layout_marginTop="121dp"
+            android:layout_marginLeft="20dp"
+            app:srcCompat="@android:drawable/ic_menu_camera"
+            android:layout_alignStart="@+id/QR_codetext" />
+
+    </RelativeLayout>
+</LinearLayout>
