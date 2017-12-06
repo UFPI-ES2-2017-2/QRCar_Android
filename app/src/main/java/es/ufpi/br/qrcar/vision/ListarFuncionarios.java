@@ -19,17 +19,21 @@ import es.ufpi.br.qrcar.R;
 import es.ufpi.br.qrcar.entity.User;
 import es.ufpi.br.qrcar.facade.Facade;
 
+/**
+ * Created by Railson on 15/11/2017.
+ */
+
 public class ListarFuncionarios extends AppCompatActivity {
     private ImageButton add_button;
     private ListView listView;
-    private List<User> funcionarios;
-    private ArrayList<String> FuncionarioNames;
+    private List<User> users;
+    private ArrayList<String> usersNames;
     private Facade facade;
 
     @Override
     protected void onCreate(Bundle savedInstance) {
         super.onCreate(savedInstance);
-        setContentView(R.layout.activity_listar_func);
+        setContentView(R.layout.activity_listar_funcionarios);
         this.listView = (ListView)findViewById(R.id.listar_funcionarios_lista);
         this.add_button = (ImageButton)findViewById(R.id.listar_funcionarios_add_button);
         this.add_button.setOnClickListener(new View.OnClickListener() {
@@ -38,15 +42,15 @@ public class ListarFuncionarios extends AppCompatActivity {
                 add_button_onClick(view);
             }
         });
-        funcionarios = new LinkedList<User>();
+        this.users = new LinkedList<User>();
         facade = (Facade) getIntent().getSerializableExtra("Facade");
-        funcionarios = facade.listUsers();
-        FuncionarioNames = new ArrayList<String>();
-        for (User u : funcionarios){
-            FuncionarioNames.add(u.getName());
+        users = facade.listUsers();
+        usersNames = new ArrayList<String>();
+        for (User c : users){
+            usersNames.add(c.getName());
         }
 
-        ListAdapter listAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, FuncionarioNames);
+        ListAdapter listAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, usersNames);
         listView.setAdapter(listAdapter);
     }
 
@@ -64,3 +68,4 @@ public class ListarFuncionarios extends AppCompatActivity {
         startActivity(intent);
     }
 }
+

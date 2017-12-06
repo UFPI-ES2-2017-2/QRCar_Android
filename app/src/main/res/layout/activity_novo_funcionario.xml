@@ -32,9 +32,9 @@
             android:layout_marginLeft="20dp"
             android:layout_marginTop="44dp"
             android:ems="5"
-            android:inputType="textPersonName"
             android:hint="Nome"
-            android:textColorHint="@color/colorPrimary"/>
+            android:inputType="textPersonName"
+            android:textColorHint="@color/colorPrimary" />
 
         <EditText
             android:id="@+id/novo_funcionario_sobrenome_input"
@@ -44,9 +44,9 @@
             android:layout_marginRight="20sp"
             android:layout_marginTop="74dp"
             android:ems="10"
-            android:inputType="textPersonName"
             android:hint="Sobrenome"
-            android:textColorHint="@color/colorPrimary"/>
+            android:inputType="textPersonName"
+            android:textColorHint="@color/colorPrimary" />
 
         <EditText
             android:id="@+id/novo_funcionario_cpf_input"
@@ -58,9 +58,9 @@
             android:layout_marginLeft="20dp"
             android:layout_marginTop="104dp"
             android:ems="10"
-            android:inputType="numberDecimal"
             android:hint="CPF"
-            android:textColorHint="@color/colorPrimary"/>
+            android:inputType="numberDecimal"
+            android:textColorHint="@color/colorPrimary" />
 
         <EditText
             android:id="@+id/novo_funcionario_cargo_input"
@@ -73,10 +73,10 @@
             android:layout_marginLeft="20dp"
             android:layout_marginTop="134dp"
             android:ems="10"
+            android:hint="Cargo"
             android:inputType="textPersonName"
             android:text=""
-            android:hint="Cargo"
-            android:textColorHint="@color/colorPrimary"/>
+            android:textColorHint="@color/colorPrimary" />
 
         <EditText
             android:id="@+id/novo_funcionario_email_input"
@@ -88,9 +88,9 @@
             android:layout_toEndOf="@+id/textView13"
             android:layout_toRightOf="@+id/textView13"
             android:ems="10"
-            android:inputType="textEmailAddress"
             android:hint="Email"
-            android:textColorHint="@color/colorPrimary"/>
+            android:inputType="textEmailAddress"
+            android:textColorHint="@color/colorPrimary" />
 
         <EditText
             android:id="@+id/novo_funcionario_telefone_input"
@@ -102,9 +102,9 @@
             android:layout_toEndOf="@+id/textView14"
             android:layout_toRightOf="@+id/textView14"
             android:ems="10"
-            android:inputType="phone"
             android:hint="Telefone"
-            android:textColorHint="@color/colorPrimary"/>
+            android:inputType="phone"
+            android:textColorHint="@color/colorPrimary" />
 
 
         <EditText
@@ -118,9 +118,9 @@
             android:layout_marginLeft="20dp"
             android:layout_marginTop="224dp"
             android:ems="10"
-            android:inputType="textPersonName"
             android:hint="Rua"
-            android:textColorHint="@color/colorPrimary"/>
+            android:inputType="textPersonName"
+            android:textColorHint="@color/colorPrimary" />
 
         <EditText
             android:id="@+id/novo_funcionario_numero_input"
@@ -133,9 +133,9 @@
             android:layout_marginLeft="20dp"
             android:layout_marginTop="254dp"
             android:ems="10"
-            android:inputType="textPersonName"
             android:hint="Numero"
-            android:textColorHint="@color/colorPrimary"/>
+            android:inputType="textPersonName"
+            android:textColorHint="@color/colorPrimary" />
 
         <EditText
             android:id="@+id/novo_funcionario_bairro_input"
@@ -148,9 +148,9 @@
             android:layout_marginLeft="20dp"
             android:layout_marginTop="284dp"
             android:ems="10"
-            android:inputType="textPersonName"
             android:hint="Bairro"
-            android:textColorHint="@color/colorPrimary"/>
+            android:inputType="textPersonName"
+            android:textColorHint="@color/colorPrimary" />
 
         <EditText
             android:id="@+id/novo_funcionario_cep_input"
@@ -163,9 +163,9 @@
             android:layout_marginLeft="20dp"
             android:layout_marginTop="314dp"
             android:ems="10"
-            android:inputType="textPersonName"
             android:hint="CEP"
-            android:textColorHint="@color/colorPrimary"/>
+            android:inputType="textPersonName"
+            android:textColorHint="@color/colorPrimary" />
 
         <EditText
             android:id="@+id/novo_funcionario_cidade_input"
@@ -178,9 +178,9 @@
             android:layout_marginLeft="20dp"
             android:layout_marginTop="344dp"
             android:ems="10"
-            android:inputType="textPersonName"
             android:hint="Cidade"
-            android:textColorHint="@color/colorPrimary"/>
+            android:inputType="textPersonName"
+            android:textColorHint="@color/colorPrimary" />
 
         <EditText
             android:id="@+id/novo_funcionario_estado_input"
@@ -193,41 +193,35 @@
             android:layout_marginLeft="20dp"
             android:layout_marginTop="374dp"
             android:ems="10"
-            android:inputType="textPersonName"
             android:hint="Estado"
-            android:textColorHint="@color/colorPrimary"/>
+            android:inputType="textPersonName"
+            android:textColorHint="@color/colorPrimary" />
+
         <Button
             android:id="@+id/novo_funcionario_cancelar_button"
             android:layout_width="135dp"
             android:layout_height="55dp"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginBottom="25dp"
-            android:layout_marginLeft="250dp"
-            android:layout_marginTop="400dp"
+            android:layout_alignBaseline="@+id/novo_funcionario_concluir_button"
+            android:layout_alignBottom="@+id/novo_funcionario_concluir_button"
+            android:layout_alignEnd="@+id/novo_funcionario_sobrenome_input"
+            android:layout_marginEnd="31dp"
             android:background="@color/colorSalmao"
-            android:textColor="@color/colorWhite"
             android:text="CANCELAR"
+            android:textColor="@color/colorWhite"
             android:textSize="14sp" />
 
         <Button
             android:id="@+id/novo_funcionario_concluir_button"
             android:layout_width="135dp"
             android:layout_height="55dp"
-            android:layout_above="@+id/button9"
-            android:layout_marginBottom="30dp"
-            android:layout_marginLeft="125dp"
-            android:layout_marginTop="430dp"
-            android:layout_toLeftOf="@+id/editText5"
-            android:layout_toStartOf="@+id/editText5"
-            android:text="CONCLUIR"
 
+            android:layout_alignStart="@+id/novo_funcionario_estado_input"
+            android:layout_below="@+id/novo_funcionario_estado_input"
+            android:layout_marginTop="14dp"
             android:background="@color/colorSalmao"
+            android:text="CONCLUIR"
             android:textColor="@color/colorWhite"
-            android:textSize="14sp"
-            />
-
-
+            android:textSize="14sp" />
 
 
     </RelativeLayout>

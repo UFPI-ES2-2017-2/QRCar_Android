@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="novo_funcionario_senha_input" type="id" />
+    <item name="novo_funcionario_posicao_input" type="id" />
+</resources>

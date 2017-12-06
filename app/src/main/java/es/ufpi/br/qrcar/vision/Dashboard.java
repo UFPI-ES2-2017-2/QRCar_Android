@@ -103,7 +103,7 @@ public class Dashboard extends AppCompatActivity implements ZXingScannerView.Res
     }
 
     private void funcionarios_button_onclick(View view) {
-        Intent intent = new Intent(this, NovoContrato.class);
+        Intent intent = new Intent(this, ListarFuncionarios.class);
         facade = (Facade) getIntent().getSerializableExtra ("Facade");
         intent.putExtra("Facade", facade);
         startActivity(intent);

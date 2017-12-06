@@ -24,6 +24,7 @@
         <activity android:name=".vision.NovoVeiculo"></activity>
         <activity android:name=".vision.NovoFuncionario"></activity>
         <activity android:name=".vision.ListarContratos"></activity>
+        <activity android:name=".vision.ListarFuncionarios"></activity>
         <activity android:name=".vision.Sobre"></activity>
         <activity android:name=".vision.QR_Code" />
 
