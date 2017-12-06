@@ -1,6 +1,5 @@
 package es.ufpi.br.qrcar.vision;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
@@ -104,7 +103,9 @@ public class Dashboard extends AppCompatActivity implements ZXingScannerView.Res
     }
 
     private void funcionarios_button_onclick(View view) {
-        Intent intent = new Intent(this,NovoFuncionario.class);
+        Intent intent = new Intent(this, NovoContrato.class);
+        facade = (Facade) getIntent().getSerializableExtra ("Facade");
+        intent.putExtra("Facade", facade);
         startActivity(intent);
     }
     private void qr_code_button_onclick(View view) {

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorQuaseBranco">
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorQuaseBranco">
+
+        <ImageButton
+            android:id="@+id/listar_funcionarios_add_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@+id/listarFuncionarios"
+            android:layout_marginEnd="22dp"
+            android:layout_marginTop="57dp"
+            android:layout_weight="1"
+            android:background="@color/colorQuaseBranco"
+            app:srcCompat="@mipmap/ic_add" />
+
+        <TextView
+            android:id="@+id/listarFuncionarios"
+            android:layout_width="400dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="130dp"
+            android:layout_marginTop="15dp"
+            android:fontFamily="sans-serif"
+            android:text="Listar Funcrionarios"
+            android:textSize="20dp"
+            android:textColor="@color/colordarkred"
+            android:textStyle="bold" />
+
+        <ListView
+            android:layout_marginTop="150dp"
+            android:layout_marginLeft="10dp"
+            android:id="@+id/listar_funcionarios_lista"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </ListView>
+
+        <TextView
+            android:id="@+id/aviso"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/listar_funcionarios_lista"
+            android:layout_below="@+id/listarFuncionarios"
+            android:layout_marginLeft="130dp"
+            android:layout_marginTop="40dp"
+            android:textColor="@color/colordarkred"
+            android:text="" />
+
+
+    </RelativeLayout>
+</android.support.constraint.ConstraintLayout>

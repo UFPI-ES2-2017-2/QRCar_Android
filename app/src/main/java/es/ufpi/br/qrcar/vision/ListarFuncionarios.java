@@ -10,48 +10,43 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
 import android.widget.ListAdapter;
 import android.widget.ListView;
-import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
 import es.ufpi.br.qrcar.R;
-import es.ufpi.br.qrcar.entity.Contract;
+import es.ufpi.br.qrcar.entity.User;
 import es.ufpi.br.qrcar.facade.Facade;
 
-public class ListarContratos  extends AppCompatActivity {
-
-    private ImageButton add_button_contratos;
+public class ListarFuncionarios extends AppCompatActivity {
+    private ImageButton add_button;
     private ListView listView;
-    private List<Contract> contratos;
-    private ArrayList<String> ContratoNames;
-    private ArrayList<String> ContractsIds;
+    private List<User> funcionarios;
+    private ArrayList<String> FuncionarioNames;
     private Facade facade;
-    private TextView aviso;
+
     @Override
     protected void onCreate(Bundle savedInstance) {
         super.onCreate(savedInstance);
-        setContentView(R.layout.activity_listar_contratos);
-        this.listView = (ListView)findViewById(R.id.listar_contratos_lista);
-        this.add_button_contratos = (ImageButton)findViewById(R.id.listar_contratos_add_button);
-        this.aviso = (TextView) findViewById(R.id.aviso);
-        this.add_button_contratos.setOnClickListener(new View.OnClickListener() {
+        setContentView(R.layout.activity_listar_func);
+        this.listView = (ListView)findViewById(R.id.listar_funcionarios_lista);
+        this.add_button = (ImageButton)findViewById(R.id.listar_funcionarios_add_button);
+        this.add_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 add_button_onClick(view);
             }
         });
-        this.contratos = new LinkedList<Contract>();
+        funcionarios = new LinkedList<User>();
         facade = (Facade) getIntent().getSerializableExtra("Facade");
-        this.contratos = facade.listContracts();
-        this.ContractsIds = new ArrayList<String>();
-        String item = "";
-        for(Contract c: this.contratos) {
-            ContractsIds.add(Integer.toString(c.getClient_cpf())); //troqueo pra cpf para fins de teste
+        funcionarios = facade.listUsers();
+        FuncionarioNames = new ArrayList<String>();
+        for (User u : funcionarios){
+            FuncionarioNames.add(u.getName());
         }
 
-        ListAdapter listAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, ContractsIds);
+        ListAdapter listAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, FuncionarioNames);
         listView.setAdapter(listAdapter);
     }
 
@@ -63,7 +58,7 @@ public class ListarContratos  extends AppCompatActivity {
     }
 
     private void add_button_onClick(View view) {
-        Intent intent = new Intent(this, NovoContrato.class);
+        Intent intent = new Intent(this, NovoFuncionario.class);
         facade = (Facade) getIntent().getSerializableExtra ("Facade");
         intent.putExtra("Facade", facade);
         startActivity(intent);

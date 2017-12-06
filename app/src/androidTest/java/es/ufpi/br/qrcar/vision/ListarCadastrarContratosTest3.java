@@ -1,7 +1,6 @@
 package es.ufpi.br.qrcar.vision;
 
 
-import android.support.test.espresso.DataInteraction;
 import android.support.test.espresso.ViewInteraction;
 import android.support.test.rule.ActivityTestRule;
 import android.support.test.runner.AndroidJUnit4;
@@ -20,9 +19,7 @@ import org.junit.runner.RunWith;
 
 import es.ufpi.br.qrcar.R;
 
-import static android.support.test.espresso.Espresso.onData;
 import static android.support.test.espresso.Espresso.onView;
-import static android.support.test.espresso.Espresso.pressBack;
 import static android.support.test.espresso.action.ViewActions.click;
 import static android.support.test.espresso.action.ViewActions.closeSoftKeyboard;
 import static android.support.test.espresso.action.ViewActions.pressImeActionButton;
@@ -33,18 +30,17 @@ import static android.support.test.espresso.matcher.ViewMatchers.withClassName;
 import static android.support.test.espresso.matcher.ViewMatchers.withId;
 import static android.support.test.espresso.matcher.ViewMatchers.withText;
 import static org.hamcrest.Matchers.allOf;
-import static org.hamcrest.Matchers.anything;
 import static org.hamcrest.Matchers.is;
 
 @LargeTest
 @RunWith(AndroidJUnit4.class)
-public class CadastrareListarTest2 {
+public class ListarCadastrarContratosTest3 {
 
     @Rule
     public ActivityTestRule<Login> mActivityTestRule = new ActivityTestRule<>(Login.class);
 
     @Test
-    public void cadastrareListarTest2() {
+    public void listarCadastrarContratos() {
         ViewInteraction appCompatEditText = onView(
                 allOf(withId(R.id.login_user_input),
                         childAtPosition(
@@ -96,251 +92,175 @@ public class CadastrareListarTest2 {
         appCompatButton.perform(click());
 
         ViewInteraction button = onView(
-                allOf(withId(R.id.clientes_button),
+                allOf(withId(R.id.contratos_button),
                         childAtPosition(
                                 childAtPosition(
                                         IsInstanceOf.<View>instanceOf(android.widget.LinearLayout.class),
                                         0),
-                                1),
+                                3),
                         isDisplayed()));
         button.check(matches(isDisplayed()));
 
         ViewInteraction button2 = onView(
-                allOf(withId(R.id.clientes_button),
+                allOf(withId(R.id.contratos_button),
                         childAtPosition(
                                 childAtPosition(
                                         IsInstanceOf.<View>instanceOf(android.widget.LinearLayout.class),
                                         0),
-                                1),
+                                3),
                         isDisplayed()));
         button2.check(matches(isDisplayed()));
 
-        ViewInteraction button3 = onView(
-                allOf(withId(R.id.clientes_button),
-                        childAtPosition(
-                                childAtPosition(
-                                        IsInstanceOf.<View>instanceOf(android.widget.LinearLayout.class),
-                                        0),
-                                1),
-                        isDisplayed()));
-        button3.check(matches(isDisplayed()));
-
         ViewInteraction appCompatButton2 = onView(
-                allOf(withId(R.id.clientes_button), withText("Clientes"),
-                        childAtPosition(
-                                childAtPosition(
-                                        withClassName(is("android.widget.LinearLayout")),
-                                        0),
-                                0),
-                        isDisplayed()));
-        appCompatButton2.perform(click());
-
-        ViewInteraction appCompatImageButton = onView(
-                allOf(withId(R.id.listar_clientes_add_button),
-                        childAtPosition(
-                                childAtPosition(
-                                        withId(android.R.id.content),
-                                        0),
-                                0),
-                        isDisplayed()));
-        appCompatImageButton.perform(click());
-
-        ViewInteraction appCompatEditText5 = onView(
-                allOf(withId(R.id.novo_cliente_nomecliente_input),
-                        childAtPosition(
-                                childAtPosition(
-                                        withClassName(is("android.widget.LinearLayout")),
-                                        0),
-                                1),
-                        isDisplayed()));
-        appCompatEditText5.perform(click());
-
-        ViewInteraction appCompatEditText6 = onView(
-                allOf(withId(R.id.novo_cliente_nomecliente_input),
-                        childAtPosition(
-                                childAtPosition(
-                                        withClassName(is("android.widget.LinearLayout")),
-                                        0),
-                                1),
-                        isDisplayed()));
-        appCompatEditText6.perform(replaceText("francisco das chagas"), closeSoftKeyboard());
-
-        ViewInteraction appCompatEditText7 = onView(
-                allOf(withId(R.id.novo_cliente_CPF_input),
+                allOf(withId(R.id.contratos_button), withText("CONTRATOS"),
                         childAtPosition(
                                 childAtPosition(
                                         withClassName(is("android.widget.LinearLayout")),
                                         0),
                                 2),
                         isDisplayed()));
-        appCompatEditText7.perform(replaceText("1234567"), closeSoftKeyboard());
+        appCompatButton2.perform(click());
 
-        ViewInteraction appCompatEditText8 = onView(
-                allOf(withId(R.id.novo_cliente_email_input),
+        ViewInteraction appCompatImageButton = onView(
+                allOf(withId(R.id.listar_contratos_add_button),
                         childAtPosition(
                                 childAtPosition(
-                                        withClassName(is("android.widget.LinearLayout")),
+                                        withClassName(is("android.support.constraint.ConstraintLayout")),
+                                        0),
+                                0),
+                        isDisplayed()));
+        appCompatImageButton.perform(click());
+
+        ViewInteraction appCompatEditText5 = onView(
+                allOf(withId(R.id.novo_contrato_start_date_input),
+                        childAtPosition(
+                                childAtPosition(
+                                        withId(android.R.id.content),
+                                        0),
+                                1),
+                        isDisplayed()));
+        appCompatEditText5.perform(click());
+
+        ViewInteraction appCompatEditText6 = onView(
+                allOf(withId(R.id.novo_contrato_start_date_input),
+                        childAtPosition(
+                                childAtPosition(
+                                        withId(android.R.id.content),
+                                        0),
+                                1),
+                        isDisplayed()));
+        appCompatEditText6.perform(replaceText("1/0/07"), closeSoftKeyboard());
+
+        ViewInteraction appCompatEditText7 = onView(
+                allOf(withId(R.id.novo_contrato_data_termino_input),
+                        childAtPosition(
+                                childAtPosition(
+                                        withId(android.R.id.content),
+                                        0),
+                                2),
+                        isDisplayed()));
+        appCompatEditText7.perform(replaceText("7/10/07"), closeSoftKeyboard());
+
+        ViewInteraction appCompatEditText8 = onView(
+                allOf(withId(R.id.novo_contrato_preco_input),
+                        childAtPosition(
+                                childAtPosition(
+                                        withId(android.R.id.content),
                                         0),
                                 3),
                         isDisplayed()));
-        appCompatEditText8.perform(replaceText("franciscodc@gmail.com"), closeSoftKeyboard());
+        appCompatEditText8.perform(replaceText("12"), closeSoftKeyboard());
 
         ViewInteraction appCompatEditText9 = onView(
-                allOf(withId(R.id.novo_cliente_telefone_input),
+                allOf(withId(R.id.novo_contrato_cpf_input),
                         childAtPosition(
                                 childAtPosition(
-                                        withClassName(is("android.widget.LinearLayout")),
+                                        withId(android.R.id.content),
                                         0),
                                 4),
                         isDisplayed()));
-        appCompatEditText9.perform(replaceText("32222222"), closeSoftKeyboard());
+        appCompatEditText9.perform(replaceText("123456"), closeSoftKeyboard());
 
         ViewInteraction appCompatEditText10 = onView(
-                allOf(withId(R.id.novo_cliente_telefone_input), withText("32222222"),
+                allOf(withId(R.id.novo_contrato_cpf_input), withText("123456"),
                         childAtPosition(
                                 childAtPosition(
-                                        withClassName(is("android.widget.LinearLayout")),
+                                        withId(android.R.id.content),
                                         0),
                                 4),
                         isDisplayed()));
         appCompatEditText10.perform(pressImeActionButton());
 
         ViewInteraction appCompatEditText11 = onView(
-                allOf(withId(R.id.novo_cliente_estado_input),
+                allOf(withId(R.id.novo_contrato_cpf_input), withText("123456"),
                         childAtPosition(
                                 childAtPosition(
-                                        withClassName(is("android.widget.LinearLayout")),
+                                        withId(android.R.id.content),
                                         0),
-                                7),
+                                4),
                         isDisplayed()));
-        appCompatEditText11.perform(click());
+        appCompatEditText11.perform(replaceText("1234567"));
 
         ViewInteraction appCompatEditText12 = onView(
-                allOf(withId(R.id.novo_cliente_estado_input),
+                allOf(withId(R.id.novo_contrato_cpf_input), withText("1234567"),
                         childAtPosition(
                                 childAtPosition(
-                                        withClassName(is("android.widget.LinearLayout")),
+                                        withId(android.R.id.content),
                                         0),
-                                7),
+                                4),
                         isDisplayed()));
-        appCompatEditText12.perform(replaceText("piaui"), closeSoftKeyboard());
+        appCompatEditText12.perform(closeSoftKeyboard());
 
         ViewInteraction appCompatEditText13 = onView(
-                allOf(withId(R.id.novo_cliente_estado_input), withText("piaui"),
+                allOf(withId(R.id.novo_contrato_placa_input),
                         childAtPosition(
                                 childAtPosition(
-                                        withClassName(is("android.widget.LinearLayout")),
+                                        withId(android.R.id.content),
                                         0),
-                                7),
+                                5),
                         isDisplayed()));
-        appCompatEditText13.perform(pressImeActionButton());
+        appCompatEditText13.perform(replaceText("asd3456"), closeSoftKeyboard());
 
         ViewInteraction appCompatEditText14 = onView(
-                allOf(withId(R.id.novo_cliente_cidade_input),
+                allOf(withId(R.id.novo_contrato_placa_input), withText("asd3456"),
                         childAtPosition(
                                 childAtPosition(
-                                        withClassName(is("android.widget.LinearLayout")),
+                                        withId(android.R.id.content),
                                         0),
-                                8),
+                                5),
                         isDisplayed()));
-        appCompatEditText14.perform(replaceText("teresina"), closeSoftKeyboard());
-
-        ViewInteraction appCompatEditText15 = onView(
-                allOf(withId(R.id.novo_cliente_cidade_input), withText("teresina"),
-                        childAtPosition(
-                                childAtPosition(
-                                        withClassName(is("android.widget.LinearLayout")),
-                                        0),
-                                8),
-                        isDisplayed()));
-        appCompatEditText15.perform(pressImeActionButton());
-
-        ViewInteraction appCompatEditText16 = onView(
-                allOf(withId(R.id.novo_cliente_rua_input),
-                        childAtPosition(
-                                childAtPosition(
-                                        withClassName(is("android.widget.LinearLayout")),
-                                        0),
-                                9),
-                        isDisplayed()));
-        appCompatEditText16.perform(replaceText("13 de maio"), closeSoftKeyboard());
-
-        ViewInteraction appCompatEditText17 = onView(
-                allOf(withId(R.id.novo_cliente_rua_input), withText("13 de maio"),
-                        childAtPosition(
-                                childAtPosition(
-                                        withClassName(is("android.widget.LinearLayout")),
-                                        0),
-                                9),
-                        isDisplayed()));
-        appCompatEditText17.perform(pressImeActionButton());
+        appCompatEditText14.perform(pressImeActionButton());
 
         ViewInteraction appCompatButton3 = onView(
-                allOf(withId(R.id.novo_cliente_concluir_button), withText("CONCLUIR"),
+                allOf(withId(R.id.novo_contrato_criar_button), withText("CRIAR"),
                         childAtPosition(
                                 childAtPosition(
-                                        withClassName(is("android.widget.LinearLayout")),
+                                        withId(android.R.id.content),
                                         0),
                                 6),
                         isDisplayed()));
         appCompatButton3.perform(click());
 
         ViewInteraction appCompatButton4 = onView(
-                allOf(withId(R.id.clientes_button), withText("Clientes"),
+                allOf(withId(R.id.contratos_button), withText("CONTRATOS"),
                         childAtPosition(
                                 childAtPosition(
                                         withClassName(is("android.widget.LinearLayout")),
                                         0),
-                                0),
+                                2),
                         isDisplayed()));
         appCompatButton4.perform(click());
 
-        DataInteraction appCompatTextView = onData(anything())
-                .inAdapterView(allOf(withId(R.id.listar_clientes_lista),
-                        childAtPosition(
-                                withClassName(is("android.widget.RelativeLayout")),
-                                2)))
-                .atPosition(6);
-        appCompatTextView.perform(click());
-
-        DataInteraction appCompatTextView2 = onData(anything())
-                .inAdapterView(allOf(withId(R.id.listar_clientes_lista),
-                        childAtPosition(
-                                withClassName(is("android.widget.RelativeLayout")),
-                                2)))
-                .atPosition(6);
-        appCompatTextView2.perform(click());
-
-        DataInteraction appCompatTextView3 = onData(anything())
-                .inAdapterView(allOf(withId(R.id.listar_clientes_lista),
-                        childAtPosition(
-                                withClassName(is("android.widget.RelativeLayout")),
-                                2)))
-                .atPosition(6);
-        appCompatTextView3.perform(click());
-
-        pressBack();
-
-        ViewInteraction appCompatButton5 = onView(
-                allOf(withId(R.id.clientes_button), withText("Clientes"),
-                        childAtPosition(
-                                childAtPosition(
-                                        withClassName(is("android.widget.LinearLayout")),
-                                        0),
-                                0),
-                        isDisplayed()));
-        appCompatButton5.perform(click());
-
         ViewInteraction textView = onView(
-                allOf(withId(android.R.id.text1), withText("francisco das chagas"),
+                allOf(withId(android.R.id.text1), withText("1234567"),
                         childAtPosition(
-                                allOf(withId(R.id.listar_clientes_lista),
+                                allOf(withId(R.id.listar_contratos_lista),
                                         childAtPosition(
                                                 IsInstanceOf.<View>instanceOf(android.widget.RelativeLayout.class),
-                                                2)),
-                                6),
+                                                3)),
+                                0),
                         isDisplayed()));
-        textView.check(matches(withText("francisco das chagas")));
+        textView.check(matches(withText("1234567")));
 
     }
 
